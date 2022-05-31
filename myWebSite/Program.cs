@@ -1,8 +1,20 @@
+using myWebSite.Models;
+using Telegram.Bot;
+using Telegram.Bot.Types;
+
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-
+builder.Services.AddDbContext<PointDbContext>(a =>
+{
+    throw new Exception("Добавити строку підключення");
+});
+builder.Services.AddSingleton<TelegramBotClient>(a =>
+{
+    throw new Exception();
+});
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
