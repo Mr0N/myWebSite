@@ -9,7 +9,14 @@ namespace myWebSite.Models
         public DbSet<MessageFromClient> messages { set; get; }
         public PointDbContext(DbContextOptions options):base(options)
         {
-
+            Console.WriteLine("DB Create");
+            Database.EnsureCreated();
+            if (passwords.Count() == 0)
+            {
+                passwords.Add(new PasswordTelegramBot() { Password = "user!@1998" });
+                SaveChanges();
+            }
+            
         }
     }
 }

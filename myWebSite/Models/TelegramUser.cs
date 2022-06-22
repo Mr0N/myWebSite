@@ -4,6 +4,6 @@
     {
         public int Id { get; set; }
 
-        public ICollection<User> users { get; set; }
+        public long ChatId { set; get; }
     }
 }

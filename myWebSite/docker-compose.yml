@@ -1,0 +1,21 @@
+﻿version: "3.3"
+
+services:
+   postgres:
+    image: postgres
+    volumes:
+        - /home/photo_q/info/db:/var/lib/postgresql/data
+    environment:
+        POSTGRES_PASSWORD: nIMk5ysHqoZ
+        PGDATA: /var/lib/postgresql/data/pgdata
+   app:
+    image: oanonim640/mywebsite:latest
+    ports:
+        - 5000:5000
+    links:
+        - postgres:postgres
+    environment:
+        ASPNETCORE_ENVIRONMENT: Development
+        ASPNETCORE_URLS: http://*:5000
+        "ConnectionStrings:Point": "Server=postgres;Port=5432;Database=PointSites;UID=postgres;PWD=nIMk5ysHqoZ"
+        Token: "930136847:AAG7LG76c9HGCI0X70ZG2YTxDL5JFbG7L3I"

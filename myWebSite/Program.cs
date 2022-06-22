@@ -1,20 +1,25 @@
 using myWebSite.Models;
 using Telegram.Bot;
 using Telegram.Bot.Types;
-
+using Microsoft.EntityFrameworkCore;
+using myWebSite.Service;
 
 var builder = WebApplication.CreateBuilder(args);
-
+Console.WriteLine("New Version");
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
 builder.Services.AddDbContext<PointDbContext>(a =>
 {
-    throw new Exception("Добавити строку підключення");
-});
+    a.UseNpgsql(builder.Configuration.GetConnectionString("Point"));
+},ServiceLifetime.Singleton);
+builder.Services.AddHostedService<TelegramWorkerService>();
 builder.Services.AddSingleton<TelegramBotClient>(a =>
 {
-    throw new Exception();
+
+    return new TelegramBotClient(builder.Configuration.GetSection("Token").Value);
 });
+builder.Services.AddSingleton<MessageToTelegramService>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

@@ -9,17 +9,17 @@
     </button>
 </header>
 <div class="contact_form_wrapper modal" id="login-form">
-    <div class="contact_form">
+    <form asp-controller="Message" asp-action="Send" class="contact_form">
         <div class="contact_form_block">
-            <input type="text" id="modal_form_name" name="your_name" placeholder="Ваше ім'я">
+            <input type="text" id="modal_form_name" name="name" placeholder="Ваше ім'я">
             <span class="contact_form_error">Будь ласка, введіть Ваше ім'я</span>
         </div>
         <div class="contact_form_block">
-            <input type="tel" id="modal_form_phone" name="your_phone" placeholder="Ваш telegram">
+            <input type="tel" id="modal_form_phone" name="telegram" placeholder="Ваш telegram">
             <span class="contact_form_error">Будь ласка, введіть Ваш телеграм(телефон чи юзернейм)</span>
         </div>
         <button class="contact_form_submit modal_form_submit" id="modal_form_submit">Замовити</button>
-    </div>
+    </form>
 
 </div>
 <main class="service__main" itemscope itemtype="http://schema.org/Product">
@@ -50,7 +50,7 @@
                                rel="modal:open">Замовити</a>
                             <div class="service__top-price">
                                 Ціна від <span itemprop="price" id="id_price4">
-                                    1 000
+                                    500
                                 </span> ГРН
                             </div>
                         </div>
@@ -166,20 +166,20 @@
                                 </div>
                             </div>
                             <div class="payment-form-container">
-                                <div class="contact_form_sectional">
+                                <form asp-action="Send" asp-controller="Message" class="contact_form_sectional">
                                     <div class="contact_form_block">
                                         <input type="text" id="sectional_form_name"
-                                               name="your_name" placeholder="Ваше ім'я" /> <span class="contact_form_error">Будь ласка, введіть Ваше ім'я</span>
+                                               name="name" placeholder="Ваше ім'я" /> <span class="contact_form_error">Будь ласка, введіть Ваше ім'я</span>
                                     </div>
                                     <div class="contact_form_block">
                                         <input type="tel" id="sectional_form_phone"
-                                               name="your_phone" placeholder="Ваш telegram" /> <span class="contact_form_error">Будь ласка, введіть Ваш телеграм(телефон чи юзернейм)</span>
+                                               name="telegram" placeholder="Ваш telegram" /> <span class="contact_form_error">Будь ласка, введіть Ваш телеграм(телефон чи юзернейм)</span>
                                     </div>
                                     <button class="contact_form_submit modal_form_submit"
                                             id="sectional_form_submit">
                                         Безкоштовна консультація
                                     </button>
-                                </div>
+                                </form>
                                 <img class="payment-black-triangle" src="./icon/svgPayment/trianglePayment2.svg"
                                      alt="Triangle black">
                                 <img class="payment-yellow-triangle" src="./icon/svgPayment/trianglePayment.svg"
@@ -418,20 +418,20 @@
                     <div class="contact__right">
                         <div class="contact__title">
                             <div class="contact-title-h3">Зв'яжіться зі мною для консультації</div>
-                            <div class="contact_section_form">
+                            <form asp-controller="Message" asp-action="Send"  class="contact_section_form">
                                 <div class="contact_section_form_name_block">
                                     <input type="text" id="form_name"
-                                           name="your_name" placeholder="Ваше ім'я" /> <span class="contact_form_error">Будь ласка, введіть Ваше ім'я</span>
+                                           name="name" placeholder="Ваше ім'я" /> <span class="contact_form_error">Будь ласка, введіть Ваше ім'я</span>
                                 </div>
                                 <div class="contact_section_form_name_block">
                                     <input type="tel" id="form_phone"
-                                           name="your_phone" placeholder="Ваш telegram" /> <span class="contact_form_error">Будь ласка, введіть Ваш телеграм(телефон чи юзернейм)</span>
+                                           name="telegram" placeholder="Ваш telegram" /> <span class="contact_form_error">Будь ласка, введіть Ваш телеграм(телефон чи юзернейм)</span>
                                 </div>
                                 <button class="contact_section_form_submit" id="form_submit">
                                     Безкоштовна
                                     консультація
                                 </button>
-                            </div>
+                            </form>
                         </div>
                     </div>
                 </div>

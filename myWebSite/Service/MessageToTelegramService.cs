@@ -9,7 +9,7 @@ namespace myWebSite.Service
         public async Task Start(string name,string telegram)
         {
             foreach (var item in _pointDb.users
-                .SelectMany(a=>a.users)
+                //.SelectMany(a=>a.users)
                 .Select(a=>a.ChatId))
             {
                 await _client.SendTextMessageAsync(new ChatId(item),
