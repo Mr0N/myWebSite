@@ -20,6 +20,7 @@ builder.Services.AddSingleton<TelegramBotClient>(a =>
     return new TelegramBotClient(builder.Configuration.GetSection("Token").Value);
 });
 builder.Services.AddSingleton<MessageToTelegramService>();
+builder.Services.AddLogging(a => a.AddConsole());
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -39,6 +40,7 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Page}/{action=Index}/{id?}");
+    pattern: "{controller=Page}/{action=Index}/{uri?}");
+
 
 app.Run();

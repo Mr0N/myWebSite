@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "myWebSite", "myWebSite\myWebSite.csproj", "{96CDBA0C-7CB0-4313-9340-613430270BDA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "myWebSite", "myWebSite\myWebSite.csproj", "{96CDBA0C-7CB0-4313-9340-613430270BDA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleSitemap", "SimpleSitemap-master\src\SimpleSitemap\SimpleSitemap.csproj", "{6AFD2318-C350-457F-A8E3-F2E60E45717A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{96CDBA0C-7CB0-4313-9340-613430270BDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{96CDBA0C-7CB0-4313-9340-613430270BDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{96CDBA0C-7CB0-4313-9340-613430270BDA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6AFD2318-C350-457F-A8E3-F2E60E45717A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6AFD2318-C350-457F-A8E3-F2E60E45717A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6AFD2318-C350-457F-A8E3-F2E60E45717A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6AFD2318-C350-457F-A8E3-F2E60E45717A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

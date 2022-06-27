@@ -1,17 +1,19 @@
 ﻿<!DOCTYPE html>
 <html lang="uk" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
-
+@{
+    string domen = ViewBag?.Domen ?? "";
+}
 <head>
-    <script src="./js/header.js"></script>
+    <script src="~/js/header.js"></script>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes">
     <meta name="format-detection" content="telephone=no,email=no,url=no">
-    <title>Парсинг товарів - Замовити парсинг товарів з сайту під ключ</title>
-    <link rel="stylesheet" type="text/css" href="./css/style.css" media="all" />
-    <link rel="stylesheet" type="text/css" href="./css/first.css" media="all" />
+    <title>Парсинг товарів - Замовити парсинг товарів з сайту @domen під ключ</title>
+    <link rel="stylesheet" type="text/css" href="~/css/style.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="~/css/first.css" media="all" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script data-wpfc-render="false" src="./js/slider.js"></script>
+    <script data-wpfc-render="false" src="~/js/slider.js"></script>
 
 
     <!-- Remember to include jQuery :) -->
@@ -43,8 +45,7 @@
         </div>
         </div>
         </nav>
-        </header>*@
-
+        </header>*@ 
     @RenderBody()
 
     <footer class="border-top footer text-muted">
@@ -57,11 +58,11 @@
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-    <script src="./js/scriptss.js"></script>
-    <script src="./js/scrips.js"></script>
-    <script src="./js/scrip.js"></script>
-    <script src="./js/scripts.js"></script>
-    <script defer src="./js/script.js"></script>
+    <script src="~/js/scriptss.js"></script>
+    <script src="~/js/scrips.js"></script>
+    <script src="~/js/scrip.js"></script>
+    <script src="~/js/scripts.js"></script>
+    <script defer src="~/js/script.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" /> 
 </body>

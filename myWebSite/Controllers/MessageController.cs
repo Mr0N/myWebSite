@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using myWebSite.Models;
 using myWebSite.Service;
 
@@ -13,30 +14,32 @@ namespace myWebSite.Controllers
             return View();
         }
         [HttpPost]
-        public IActionResult Send(MessageFromClient message)
+        public async Task<IActionResult> Send(MessageFromClient message)
         {
-            _pointDb.messages.Add(new MessageFromClient()
+             _pointDb.messages.Add(new MessageFromClient()
             {
                 Name = message.Name,
                 Telegram = message.Telegram,
                 DateAdds = DateTime.Now
             });
-            _pointDb.SaveChanges();
+             _pointDb.SaveChanges();
             try
             {
-                _message.Start(message.Telegram, message.Name).GetAwaiter().GetResult();
+                await _message.Start(message.Telegram, message.Name);
             }
             catch(Exception ex) {
-                Console.WriteLine(ex.Message);
+                _loger.LogWarning(ex?.Message ?? "");
             }
             return View("Index");
         }
         PointDbContext _pointDb;
         MessageToTelegramService _message;
-        public MessageController(PointDbContext pointDb, MessageToTelegramService message)
+        ILogger<MessageController> _loger;
+        public MessageController(PointDbContext pointDb, MessageToTelegramService message,ILogger<MessageController> logger)
         {
             _pointDb = pointDb;
             _message = message;
+            _loger = logger;
         }
     }
 }

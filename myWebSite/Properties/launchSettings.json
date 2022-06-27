@@ -14,7 +14,7 @@
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
-      
+
       "dotnetRunMessages": true
     },
     "IIS Express": {
